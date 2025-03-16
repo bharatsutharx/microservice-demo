@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: loadgenerator-config
+  namespace: microservices-demo
+data:
+    LOAD_GENERATOR_WEB_PORT: "8089"
+    LOAD_GENERATOR_USER: "5"
+    LOAD_GENERATOR_HOST: "http://frontend:8080"
+    LOAD_GENERATOR_HEADLESS: "false"
+    LOAD_GENERATOR_AUTOSTART: "true"
+    LOAD_GENERATOR_BROWSER_TRAFFIC_ENABLED: "true"
+    LOAD_GENERATOR_WEB_HOST: "0.0.0.0"

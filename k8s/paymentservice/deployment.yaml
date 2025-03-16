@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: paymentservice
+  namespace: microservices-demo
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: paymentservice
+  template:
+    metadata:
+      labels:
+        app: paymentservice
+    spec:
+    containers:
+    - name: paymentservice
+      image: bharat5/paymentservice:2.0
+      ports:
+      - containerPort: 50051
+      envFrom:
+          -configMapRef:
+            name: payment-config

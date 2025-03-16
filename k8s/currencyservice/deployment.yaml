@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: currencyservice
+  namespace: microservices-demo
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: currencyservice
+  template:
+    metadata:
+      labels:
+        app: currencyservice
+    spec:
+      containers:
+        - name: currencyservice
+          image: bharat5/currencyservice:2.0
+          ports:
+            - containerPort: 7000
+          envFrom:
+          - configMapRef:
+                name: currency-config

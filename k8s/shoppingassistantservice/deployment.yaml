@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: shoppingassistantservice
+  namespace: microservices-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shoppingassistantservice
+  template:
+    metadata:
+      labels:
+        app: shoppingassistantservice
+    spec:
+    containers: 
+      - name: shoppingassistantservice
+        image: bharat5/shoppingassistant:2.0
+        ports:
+        - containerPort: 8080
+        envFrom: 
+        - configMapRef:
+            name: shoppingassistant-config

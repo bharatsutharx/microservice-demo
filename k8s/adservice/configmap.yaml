@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ad-config
+  namespace: microservices-demo
+data:
+  PORT: "9555"

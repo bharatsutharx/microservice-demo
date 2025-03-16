@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: shippingservice
+  namespace: microservices-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shippingservice
+  template:
+    metadata:
+      labels:
+        app: shippingservice
+    spec:
+    containers:
+      - name: shippingservice
+        image: bharat5/shippingservice:2.0
+        ports:
+         - containerPort: 50051
+        envFrom:
+          - configMapRef:
+            name: shipping-config

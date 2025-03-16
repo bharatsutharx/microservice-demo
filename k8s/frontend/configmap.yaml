@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: microservices-demo
+data:
+  PORT: "8080"
+  LOAD_GENERATOR_WEB_PORT: "8089"
+  LOAD_GENERATOR_HOST: "http://frontend:8080"
+  LOAD_GENERATOR_WEB_HOST: "loadgenerator"
+  CHECKOUT_SERVICE_ADDR: "checkoutservice:5050"
+  CART_SERVICE_ADDR: "cartservice:7070"
+  CURRENCY_SERVICE_ADDR: "currencyservice:7000"
+  PAYMENT_SERVICE_ADDR: "paymentservice:50051"
+  EMAIL_SERVICE_ADDR: "emailservice:8080"
+  SHIPPING_SERVICE_ADDR: "shippingservice:50051"
+  PRODUCT_CATALOG_SERVICE_ADDR: "productcatalogservice:3550"
+  RECOMMENDATION_SERVICE_ADDR: "recommendationservice:8080"
+  AD_SERVICE_ADDR: "adservice:9555"
+  SHOPPING_ASSISTANT_SERVICE_ADDR: "shoppingassistant:8080"
+  

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap 
+metadata: 
+  name: shoppingassistant-config
+  namespace: microservices-demo
+data:
+  PORT: "8080"
