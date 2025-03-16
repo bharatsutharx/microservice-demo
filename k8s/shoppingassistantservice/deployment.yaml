@@ -15,7 +15,7 @@ spec:
     spec:
     containers: 
       - name: shoppingassistantservice
-        image: bharat5/shoppingassistant:2.0
+        image: bharat5/shoppingassistantservice:2.0
         ports:
         - containerPort: 8080
         envFrom: 
