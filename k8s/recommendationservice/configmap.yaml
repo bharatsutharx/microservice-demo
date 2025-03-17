@@ -5,3 +5,5 @@ metadata:
   namespace: microservices-demo
 data:
   PORT: "8080"
+  DISABLE_GCP_AUTH: "true"
+  PRODUCT_CATALOG_SERVICE_ADDR: "productcatalogservice:3550"

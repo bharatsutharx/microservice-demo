@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: currency-config
   namespace: microservices-demo
-  data:
-    PORT: "7000"
-    
+data:
+  PORT: "7000"

@@ -4,5 +4,5 @@ metadata:
   name: cart-config
   namespace: microservices-demo
 data:
-  REDIS_ADDR: "redis-cart:6379"
+  REDIS_ADDR: "redis-cache:6379"
   PORT: "7070"

@@ -1,8 +1,8 @@
 apiVersion: v1
-kind: Service 
-metadata: 
+kind: Service
+metadata:
   name: recommendationservice
-  namespace: microservices-demo 
+  namespace: microservices-demo
 spec:
   selector:
     app: recommendationservice

@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: productcatalogservice
@@ -13,11 +13,11 @@ spec:
       labels:
         app: productcatalogservice
     spec:
-    containers:
-      - name: productcatalogservice
-        image: bharat5/productcatalogservice:2.0
-        ports:
-         - containerPort: 3550
-        envFrom:
-          - configMapRef:
-            name: productcatalog-config
+      containers:
+        - name: productcatalogservice
+          image: bharat5/productcatalogservice:2.0
+          ports:
+            - containerPort: 3550
+          envFrom:
+              - configMapRef:
+                  name: productcatalog-config

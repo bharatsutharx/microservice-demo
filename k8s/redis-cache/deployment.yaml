@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: adservice
+  name: redis-cache
   namespace: microservices-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: adservice
+      app: redis-cache
   template:
     metadata:
       labels:
-        app: adservice
+        app: redis-cache
     spec:
       containers:
-        - name: adservice
-          image: bharat5/adservice:2.0
+        - name: redis-cache
+          image: redis:alpine
           ports:
-            - containerPort: 9555
+            - containerPort: 6379
           envFrom:
-            - configMapRef:
-                name: ad-config
+             - configMapRef:
+                  name: redis-config

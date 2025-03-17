@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shippingservice
@@ -13,11 +13,11 @@ spec:
       labels:
         app: shippingservice
     spec:
-    containers:
-      - name: shippingservice
-        image: bharat5/shippingservice:2.0
-        ports:
-         - containerPort: 50051
-        envFrom:
-          - configMapRef:
-            name: shipping-config
+      containers:
+        - name: shippingservice
+          image: bharat5/shippingservice:2.0
+          ports:
+            - containerPort: 50051
+          envFrom:
+            - configMapRef:
+                name: shipping-config

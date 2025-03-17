@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: frontend
@@ -13,11 +13,11 @@ spec:
       labels:
         app: frontend
     spec:
-    containers:
-    - name: frontend
-      image: bharat5/frontend:2.0
-      ports:
-      - containerPort: 8080
-      envFrom:
-        - configMapRef:
-            name: frontend-config
+      containers:
+      - name: frontend
+        image: bharat5/frontend:2.0
+        ports:
+          - containerPort: 8080
+        envFrom:
+          - configMapRef:
+              name: frontend-config

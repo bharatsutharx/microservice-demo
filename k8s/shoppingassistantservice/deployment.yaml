@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: shoppingassistantservice
@@ -13,11 +13,11 @@ spec:
       labels:
         app: shoppingassistantservice
     spec:
-    containers: 
-      - name: shoppingassistantservice
-        image: bharat5/shoppingassistantservice:2.0
-        ports:
-        - containerPort: 8080
-        envFrom: 
-        - configMapRef:
-            name: shoppingassistant-config
+      containers:
+        - name: shoppingassistantservice
+          image: bharat5/shoppingassistantservice:2.0
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: shoppingassistant-config

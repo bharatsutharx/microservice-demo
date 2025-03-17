@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: shipping-config
   namespace: microservices-demo
-
 data:
   PORT: "50051"

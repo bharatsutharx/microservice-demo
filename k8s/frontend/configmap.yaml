@@ -18,4 +18,3 @@ data:
   RECOMMENDATION_SERVICE_ADDR: "recommendationservice:8080"
   AD_SERVICE_ADDR: "adservice:9555"
   SHOPPING_ASSISTANT_SERVICE_ADDR: "shoppingassistant:8080"
-  
