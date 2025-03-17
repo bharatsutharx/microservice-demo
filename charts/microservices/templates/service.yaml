@@ -1,0 +1,20 @@
+{{- range $serviceName, $service := .Values.services }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ $service.name }}
+  namespace: {{ $.Values.global.namespace }}
+  labels:
+    app: {{ $service.name }}
+spec:
+  type: {{ $service.serviceType | default "ClusterIP" }}  # Default to ClusterIP if not set
+  selector:
+    app: {{ $service.name }}
+  ports:
+    - port: {{ $service.port }}
+      targetPort: {{ $service.port }}
+      {{- if eq $service.serviceType "NodePort" }}  
+      nodePort: 30080  
+      {{- end }}
+---
+{{- end }}
